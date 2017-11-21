@@ -4,6 +4,8 @@ Stitch Brand Logo Or Animation Inside Video Content
 ## What is it?
 A Computer vision-powered system that will analyse the entire video content and finds a suitable place for logo. It then put the processed logo in every frame of the video.
 
+This work is inspired from the product [uru-video](http://uruvideo.com/)
+
 ## Algorithm:
 1. Get the input logo size
 2. Loop through all the frames and identify least varying place for logo placement (separate algorithm)
@@ -126,20 +128,6 @@ cv2.destroyAllWindows()
 
 
 ```
-
-
-##Example:##
-**Image before stitching logo:**
-{F4298}
-
-
-**Logo:**
-{F4302}
-
-
-**Image after stitching logo:**
-{F4300}
-
 
 ### Reference:
 http://uruvideo.com/
