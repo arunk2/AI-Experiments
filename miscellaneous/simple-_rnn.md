@@ -1,5 +1,5 @@
 
-
+```
 from __future__ import print_function
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
@@ -96,4 +96,5 @@ if __name__ == '__main__':
                 print(sequence)
                 sequences.append(sequence)
             np.savetxt('test_result', sequences, fmt='%s')
-                
+        
+```
