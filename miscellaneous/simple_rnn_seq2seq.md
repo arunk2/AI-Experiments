@@ -1,3 +1,12 @@
+## seq2seq
+
+The seq2seq (Sequence To Sequence Networks) model is proposed in : [Sequence to Sequence Learning with Neural Networks](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) by Ilya Sutskever, Oriol Vinyals and Quoc V. Le.
+
+We have input and output sequences of different lengths. Let us say we have “ABC” as the input sequence, and “WXYZ” as the output sequence. Obviously, the lengths of the two sequences are different. So, how does seq2seq approach to solve that problem? The answer is: they create a model which consists of two seperate recurrent neural networks called Encoder and Decoder respectively.
+
+As the names of the two networks are somehow self-explained, first, it’s clear that we can’t directly compute the output sequence by using just one network, so we need to use the first network to encode the input sequence into some kind of “middle sequence”, then the other network will decode that sequence into our desire output sequence
+
+
 ```
 from keras.preprocessing.text import text_to_word_sequence
 from keras.models import Sequential
@@ -8,6 +17,13 @@ from nltk import FreqDist
 import numpy as np
 import os
 import datetime
+
+from keras.preprocessing.sequence import pad_sequences
+import numpy as np
+import sys
+
+import argparse
+
 
 def load_data(source, dist, max_len, vocab_size):
 
@@ -107,13 +123,8 @@ def find_checkpoint_file(folder):
     return checkpoint_file[np.argmax(modified_time)]
     
     
-    
-from keras.preprocessing.sequence import pad_sequences
-import numpy as np
-import sys
 
-import argparse
-from seq2seq_utils import *
+
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-max_len', type=int, default=200)
@@ -132,6 +143,7 @@ LAYER_NUM = args['layer_num']
 HIDDEN_DIM = args['hidden_dim']
 NB_EPOCH = args['nb_epoch']
 MODE = args['mode']
+
 
 if __name__ == '__main__':
     # Loading input sequences, output sequences and the necessary mapping dictionaries
