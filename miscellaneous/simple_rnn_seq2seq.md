@@ -1,6 +1,6 @@
 ## seq2seq
 
-The seq2seq (Sequence To Sequence Networks) model is proposed in : [Sequence to Sequence Learning with Neural Networks](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) by Ilya Sutskever, Oriol Vinyals and Quoc V. Le.
+The seq2seq (Sequence To Sequence Networks) model is proposed in : [Sequence to Sequence Learning with Neural Networks -by Ilya Sutskever, Oriol Vinyals and Quoc V. Le.](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) 
 
 We have input and output sequences of different lengths. Let us say we have “ABC” as the input sequence, and “WXYZ” as the output sequence. Obviously, the lengths of the two sequences are different. So, how does seq2seq approach to solve that problem? The answer is: they create a model which consists of two seperate recurrent neural networks called Encoder and Decoder respectively.
 
